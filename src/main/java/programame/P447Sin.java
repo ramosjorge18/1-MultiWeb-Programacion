@@ -3,6 +3,7 @@ package programame;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.TreeSet;
 
 public class P447Sin {
     static java.util.Scanner sc;
@@ -16,7 +17,7 @@ public class P447Sin {
     }
 
     private static boolean casoDePrueba() {        
-        ArrayList<Integer> numeros = new ArrayList();
+        TreeSet<Integer> restoCantidades = new TreeSet();
         int litrosMotor, cantidad, botella, i=1, cont=0, con=0, divisor=0, numerosDivisor;
         int [] recipientes;
         int [] divisores;
@@ -63,16 +64,19 @@ public class P447Sin {
         for(con=0;con<cantidad;con++){
             for(i=0;i<cantidad;i++){
                 divisor=recipientes[con]-recipientes[i];
-                numeros.add(divisor);
+                restoCantidades.add(divisor);
             }
         }
+        // Necesito añadir al TreeSet los resultados que pueda dar la suma de los mumeros actuales en el TreeSet
+        
+        
         
         // Comparamos que uno de la mezcla es un divisor
-        Iterator<Integer> puntero=numeros.iterator();
-        for(i=0;i<numeros.size();i++){
+        Iterator<Integer> puntero=restoCantidades.iterator();
+        for(i=0;i<restoCantidades.size();i++){
             numerosDivisor = puntero.next().intValue();
             for(con=0;con<divisores.length;con++){
-                if(numerosDivisor==divisores[con]){
+                if(numerosDivisor==divisores[con] || numerosDivisor==litrosMotor){
                     puede=true;
                 }  
             }
