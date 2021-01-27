@@ -5,6 +5,13 @@ import java.util.Scanner;
 
 public class Matematicas {
     
+    /**
+     * Te devuelve cual es el numero maximo de los tres que pasas
+     * @param a
+     * @param b
+     * @param c
+     * @return numero maximo
+     */
     public static int maximo (int a, int b, int c){
         if (a > b && a > c){
             return a;
@@ -40,6 +47,7 @@ public class Matematicas {
         }
     }
     
+    // Este esta con Math.pow
     public static long elevado (int base, int exponente) {
         int resultado=0, base1;
         byte cont1, cont2;
@@ -56,6 +64,10 @@ public class Matematicas {
         return resultado;
     }
     
+    /**
+     * Te muestra los divisiores de un numero
+     * @param numero 
+     */
     public static void muestraDivisor (int numero) {
         int i=1;
         do{
@@ -66,6 +78,7 @@ public class Matematicas {
         }while (i<numero);
     }
     
+    // Es la forma recursiva de un numero elevado
     public static int elevadoRecursivo (int a, int b){
         int resultado;
         if(b==0){
@@ -77,6 +90,11 @@ public class Matematicas {
         return resultado;
     }
     
+    /**
+     * Devuelve el FIVONNACI de un Nº
+     * @param n
+     * @return 
+     */
     public static int fivonnaci(int n) {
         int resultado;
         switch (n){
@@ -94,16 +112,22 @@ public class Matematicas {
         
     }
     
+    /**
+     * Te Devuelve el factorial de un Nº
+     * @param a
+     * @return 
+     */
     public static long factorial(int a) {
         long resultado=a, b;
         b=1;
         for(;a>b;b++){
             resultado = resultado*b; 
         }
-        System.out.print("Factorial de "+a+" es: " );
-        return resultado;
-        
+        return resultado; 
     }
+
+    
+    // Pruebas recursivo
     public static int sumaRecursivo(int a, int b) {                                                                            
         if (b == 0) {
             return a;
