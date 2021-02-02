@@ -15,10 +15,12 @@ public class Ejercicio9 {
     public static void main(String[] args) {
         ArrayDeque<Integer> fila1 = new ArrayDeque();
         ArrayDeque<Integer> fila2 = new ArrayDeque();
+        ArrayList<Integer> total = new ArrayList();
+        
         rellenaListAleatorios(fila1);
         rellenaListAleatorios(fila2);
-        comparaYRellena(fila1, fila2);
-        
+        total = (ArrayList<Integer>) comparaYRellena(fila1, fila2);
+        muestraArrayList(total);
     }
     
     public static void rellenaListAleatorios(ArrayDeque<Integer> numeros) {
@@ -29,7 +31,7 @@ public class Ejercicio9 {
         }
     }
     
-    public static void comparaYRellena (ArrayDeque<Integer> fila1, ArrayDeque<Integer> fila2){
+    public static List comparaYRellena (ArrayDeque<Integer> fila1, ArrayDeque<Integer> fila2){
         ArrayList<Integer> total = new ArrayList();
         Integer edad1, edad2, edad;
         while(fila1.isEmpty()==false && fila2.isEmpty()==false){
@@ -55,7 +57,7 @@ public class Ejercicio9 {
                 total.add(edad);
             }
         }
-        muestraArrayList(total);
+        return total;
     }
     
     public static void muestraArrayList(ArrayList<Integer> palabras) {
