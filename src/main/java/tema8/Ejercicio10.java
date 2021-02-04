@@ -23,22 +23,19 @@ public class Ejercicio10 {
         System.out.println("Total Compra\t"+totalCompra(lista)+"€");
     }
     
-    public static Map<String,Double> meteDatos(Map<String,Double> tabla) {
+    public static void meteDatos(Map<String,Double> tabla) {
         String articulo;
         Double precio;
         boolean s = true;
         
         do {
-            System.out.print("Nombre Articulo:");
             articulo= sc.next();
             if(articulo.equals("fin")){
                 break;
             }
-            System.out.print("Precio:");
             precio = sc.nextDouble();
             tabla.put(articulo, precio);
         }while (s);
-        return tabla;
         
     }
    
