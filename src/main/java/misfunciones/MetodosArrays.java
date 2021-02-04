@@ -1,6 +1,8 @@
 
 package misfunciones;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
@@ -94,7 +96,7 @@ public class MetodosArrays {
     }
     
     /**
-     * Modifica el array poniendo cambiando el contenido de los datos repetidos al dato introducido
+     * Modifica el array cambiando el contenido de los datos repetidos al dato introducido
      * @param array
      * @param contenidoRepetido 
      */
@@ -120,4 +122,30 @@ public class MetodosArrays {
             System.out.println(it.next());   
         }
     }
+    /**
+     * Muestra el contenido de un ArrayList de Strings
+     * @param palabras 
+     */
+    public static void muestraArrayList(ArrayList<String> palabras) {
+        String palabra;
+        
+        for(int i=0;i<palabras.size();i++){
+            System.out.println(palabras.get(i));
+        }
+    }
+    
+    /**
+     * Muestra el contenido de un HashSet de Integers
+     * @param numeros 
+     */
+    public static void muestraHash(HashSet<Integer> numeros) {
+        Iterator<Integer> punt;
+        punt = numeros.iterator();
+
+        while (punt.hasNext()) {
+            System.out.println(punt.next());
+        }
+
+    }
+    
 }
