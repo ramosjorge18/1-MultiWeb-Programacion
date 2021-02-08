@@ -9,37 +9,40 @@ public class Ejercicio12 {
         HashMap<String, String[]> mapa = new HashMap();
         String[] castellano = {"HOLA", "CERDO", "GATO", "PERRO", "GOBIERNO", "PARTIDO", "TELEFONO", "TECLADO", "RATON", "PROFESOR"};
         String[] ingles = {"HELLO", "PIG", "CAT", "DOG", "GOVERNMENT", "PARTY", "PHONE", "KEYBOARD", "MOUSE", "TEACHER"};
-        String[] frances = {"BONJOUR", "COCHON", "CHAT", "CHIEN", "GOUVERNEMENT", "PARTI", "TÉLÉPHONE", "CLAVIER", "SOURIS", "PROFESSEUR"};
+        String[] frances = {"BONJOUR", "COCHON", "CHAT", "CHIEN", "GOUVERNEMENT", "PARTI", "TELEPHONE", "CLAVIER", "SOURIS", "PROFESSEUR"};
         int idioma, acertadas = 0;
 
         mapa.put("CASTELLANO", castellano);
         mapa.put("INGLES", ingles);
         mapa.put("FRANCES", frances);
-
+        
         for (int i = 0; i < 4; i++) {
             idioma = (int) (Math.random() * 3);
-            acertadas =acertadas + preguntaYMuestra(mapa, idioma);
-            System.out.println("Acertadas "+acertadas+"/4");
+            acertadas = acertadas + preguntaYMuestra(mapa, idioma);
+            System.out.println("Acertadas " + acertadas + "/4");
+            System.out.println("");
 
         }
 
     }
-
+    
     private static int preguntaYMuestra(HashMap<String, String[]> mapa, int idioma) {
         Scanner sc = new Scanner(System.in);
         String palabra, palabraEscrita;
         int idioma2, nPalabra, acertada = 0;
 
         nPalabra = (int) (Math.random() * 10);
-
+        
+        //Comprobamos que no sea del mismo idioma
         do {
             idioma2 = (int) (Math.random() * 3);
         } while (idioma == idioma2);
-
+        // Sacamos la palabra del primer idioma, preguntamos, pedimos la respuesta.
         palabra = sacaPalabra(mapa, idioma, nPalabra);
         pregunta(idioma2, palabra);
         palabraEscrita = sc.next();
         palabraEscrita = palabraEscrita.toUpperCase();
+        //Sacamos la palabra del 2º Idioma y comprobamos si es acertada si es asi sumamos 1
         palabra = sacaPalabra(mapa, idioma2, nPalabra);
         if (palabra.equals(palabraEscrita)) {
             return acertada + 1;
