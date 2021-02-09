@@ -6,44 +6,42 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 public class Ejercicio13 {
-    
-    private static  LinkedList<Integer> numeros = new LinkedList();
-    
+
+    private static LinkedList<Integer> numeros = new LinkedList();
+
     public static void main(String[] args) {
-        
-        
+
         Collections.addAll(numeros, 1, 2, 8, 9, 12, 56, 6, 99, 9);
-        
-        for(Integer srt : numeros){
-            System.out.println("Numero: "+srt);
-        }System.out.println("");
-        
+
+        for (Integer srt : numeros) {
+            System.out.println("Numero: " + srt);
+        }
+        System.out.println("");
+
         Collections.sort(numeros);
         // Para el BinarySearch tiene que estar ordenado
         System.out.println(Collections.binarySearch(numeros, 8));
-        for(Integer srt : numeros){
-            System.out.println("Numero: "+srt);
-        }System.out.println("");
-        
+        for (Integer srt : numeros) {
+            System.out.println("Numero: " + srt);
+        }
+        System.out.println("Numeros Ordenados");
+        System.out.println("");
+
         Collections.shuffle(numeros);
-        for(Integer srt : numeros){
-            System.out.println("Numero: "+srt);
-        }System.out.println("");
-        
+        for (Integer srt : numeros) {
+            System.out.println("Numero: " + srt);
+        }
+        System.out.println("Numeros Barajeados");
+        System.out.println("");
+
+        System.out.print("Numero Maximo:");
         System.out.println(Collections.max(numeros));
+        System.out.print("Numero Minimo:");
         System.out.println(Collections.min(numeros));
-        
+
+        System.out.println("Puede dar Error en el binarySearch por no estar ordenado");
         System.out.println(Collections.binarySearch(numeros, 8));
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
     }
-    
+
 }
