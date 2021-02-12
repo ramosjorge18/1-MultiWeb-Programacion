@@ -32,9 +32,9 @@ public class Sucursal {
         CuentaCorriente p;
         while(punt.hasNext()){
             p = (CuentaCorriente) punt.next();
-            System.out.println("El DNI es: "+p.getDni());
-            System.out.println("El Usuario es: "+p.getUsuario());
-            System.out.println("El Saldo es: "+p.getSaldo()); 
+            System.out.print("El DNI es: "+p.getDni()+"\t");
+            System.out.print("El Usuario es: "+p.getUsuario()+"\t");
+            System.out.print("El Saldo es: "+p.getSaldo()); 
             System.out.println("");
             
         }
