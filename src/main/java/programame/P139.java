@@ -1,6 +1,8 @@
 /* CubiFinitos */
 package programame;
 
+import java.util.HashSet;
+
 public class P139 {
     static java.util.Scanner sc;
 
@@ -14,6 +16,7 @@ public class P139 {
     private static boolean casoDePrueba() {
         String dato = sc.nextLine();
         String num;
+        HashSet<Integer> lista = new HashSet();
                 
         if (dato.equals("0")) { // CASO DE SALIDA
             return false;
@@ -30,10 +33,11 @@ public class P139 {
                 if(nume==1){
                     System.out.println(nume+" -> cubifinito.");
                     break;
-                }else if (dato.equals(nume+"")){
+                }else if (lista.contains(nume)){
                     System.out.println(nume+ " -> no cubifinito.");
                     break;
                 }else{
+                    lista.add(nume);
                     System.out.print(nume+" - ");
                     dato = nume+"";
                 }
