@@ -58,6 +58,7 @@ public class P139 {
             cuboNumeros [i] = (int) Math.pow(numero, 3);
             suma += cuboNumeros[i];
         }
+        
         return suma;
     }  
 }
