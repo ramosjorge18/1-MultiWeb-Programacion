@@ -16,25 +16,29 @@ public class Sucursal {
     
     private int nSucursal;
     private String direccion;
-    private HashSet<CuentaCorriente> cuentasCorrientes;
+    private HashSet<CuentaCorriente> cuentas;
     
     public Sucursal(int numero, String calle){
         nSucursal = numero;
         direccion = calle;
+        cuentas = new HashSet();
     }
     public void añadeCuenta(CuentaCorriente cuenta){
-        cuentasCorrientes.add(cuenta);
+        cuentas.add(cuenta);
     }
     
     public void listado (){
-        Iterator punt = cuentasCorrientes.iterator();
+        Iterator punt = cuentas.iterator();
         CuentaCorriente p;
         while(punt.hasNext()){
             p = (CuentaCorriente) punt.next();
             System.out.println("El DNI es: "+p.getDni());
             System.out.println("El Usuario es: "+p.getUsuario());
-            System.out.println("El Saldo es: "+p.getSaldo());   
+            System.out.println("El Saldo es: "+p.getSaldo()); 
+            System.out.println("");
+            
         }
+        
     }
     
     

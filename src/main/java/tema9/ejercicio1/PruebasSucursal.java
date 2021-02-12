@@ -5,13 +5,29 @@
  */
 package tema9.ejercicio1;
 
+import com.github.javafaker.Faker;
+
+
 /**
  *
  * @author Vespertino
  */
 public class PruebasSucursal {
     public static void main(String[] args) {
+        Sucursal a = new Sucursal(1, "doce ligero de Artilleria");
+        Faker n = new Faker();
+        String nif;
+        int dinero, negativo;
         
+        for(int i=0;i<50;i++){
+            nif = n.idNumber().invalid()+"";
+            dinero = (int) (Math.random()*100000);
+            negativo = (int) (Math.random()*-500);
+            
+            CuentaCorriente c = new CuentaCorriente(nif, dinero , negativo);
+            a.añadeCuenta(c);   
+        }
+        a.listado();
     }
     
 }

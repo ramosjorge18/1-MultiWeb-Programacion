@@ -5,6 +5,8 @@
  */
 package tema9.ejercicio1;
 
+import com.github.javafaker.IdNumber;
+
 /**
  *
  * @author Vespertino
@@ -32,7 +34,7 @@ public class CuentaCorriente {
         saldo= dinero;
         limiteDescubierto = limite;
         dni = nif;
-        nombre = "";
+        nombre = "SIN NOMBRE";
     }
     public CuentaCorriente(String usuario, String nif, double dinero){
         saldo= dinero;
@@ -63,7 +65,7 @@ public class CuentaCorriente {
     }
     
     public String getUsuario (){
-        return dni;
+        return nombre;
     }
     
 }
