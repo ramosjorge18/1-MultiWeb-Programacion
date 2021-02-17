@@ -5,23 +5,47 @@
  */
 package tema9.ejercicio2;
 
+
+import com.github.javafaker.Faker;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+
+
 /**
  *
  * @author Vespertino
  */
-
 public class Run {
+
     public static void main(String[] args) {
-        Persona p = new Persona();
+        LinkedHashMap<String, Persona> alum = new LinkedHashMap();
+        LinkedHashSet<String> key;
+        Faker f = new Faker();
         
-        p.setNombre("Jorge");
-        p.setApellido1("Ramos");
-        p.setApellido2("Carol");
-        p.setEdad((byte)25);
-        p.setNumero(16639231);
+        // Introducimos a las personas en el Mapa de datos  
+        for (int i = 0; i < 50; i++) {
+            Persona p = new Persona();
+
+            p.setNombre(f.name().firstName());
+            p.setApellido1(f.name().lastName());
+            p.setApellido2(f.name().lastName());
+            p.setEdad((byte)( Math.random()*125));
+            p.setNumero((long) (Math.random()*99999999));
+            
+            alum.put(p.getNif(), p);
+        }
         
-        p.datosPersona();
+        //Sacamos las claves y mostramos todos las Personas
+        key = new LinkedHashSet<>(alum.keySet());
+        Iterator<String> punt = key.iterator();
+        
+        while(punt.hasNext()){
+            Persona p = new Persona();
+            p=alum.get(punt.next());
+            p.datosPersona();
+        }
         
     }
-    
+
 }

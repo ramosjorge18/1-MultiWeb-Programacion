@@ -75,9 +75,13 @@ public class Persona {
     }
     
     public void datosPersona(){
-        System.out.println(getnombreCompleto());
-        System.out.println(getEdad());
+        System.out.print(getnombreCompleto()+"\t"+"\t");
+        System.out.print(getEdad()+"\t"+"\t");
         System.out.println(nif.getNif());
+        System.out.println("");
+    }
+    public String getNif(){
+        return nif.getNif();
     }
     
     public void setNumero(long numero){
