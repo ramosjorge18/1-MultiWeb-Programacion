@@ -18,15 +18,15 @@ public class Run {
         Racional resultado;
         
         
-        prueba.muestraFraccion();
+        System.out.println(prueba.toString());
         prueba2 = prueba.copiaFraccion();
         System.out.println(prueba.equals(prueba2));
         resultado = prueba.multiplicaFracciones(prueba2);
-        resultado.muestraFraccion();
+        System.out.println(resultado.toString());
         resultado = prueba.divideFracciones(resultado);
-        resultado.muestraFraccion();
+        System.out.println(resultado.toString());
         resultado = resultado.restaFracciones(prueba);
-        resultado.muestraFraccion();
+        System.out.println(resultado.toString());
     }
     
 }

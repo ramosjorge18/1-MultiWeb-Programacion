@@ -101,10 +101,11 @@ public class Racional {
         return this.numerador == x.numerador && this.denominador == x.denominador; 
     }
     
-    public void muestraFraccion(){
-        System.out.println(this.numerador);
-        System.out.println("-----");
-        System.out.println(this.denominador);
+    @Override
+    public String toString(){
+        String aux;
+        aux=this.numerador+"\n------\n"+this.denominador+"";
+        return aux;
     }
 
 }
