@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tema9.ejercicio2;
+
+import java.util.*;
 
 /**
  *
@@ -15,25 +12,44 @@ public class Nif {
     private char letraDni;
     
     //Constructores
-    public Nif(long dni, char letraDni){
-        this.dni = dni;
-        this.letraDni = letraDni;
+    public Nif(){ // Defecto
+        this.dni = 0;
+        this.letraDni=' ';
     }
     
     public Nif(long dni){
-        this.dni=dni;
-        letraDni(dni);    
+        this.dni  =dni;
+        letraDni();
     }
     
-    public void letraDni(long dni){
-        byte resto = (byte) (dni%23);
+    private void letraDni(){
+        byte resto = (byte) (this.dni%23);
         String letras ="TRWAGMYFPDXBNJZSQVHLCKE";
     
         this.letraDni = letras.charAt(resto);  
     }
     
-    public String getNif(){
-        String nif;
-        return nif=this.dni+"-"+this.letraDni;
+    public long getNif(){
+        return this.dni;
     }
+    
+    public void setNif(long dni) {
+        this.dni = dni;
+        letraDni();        
+    }
+    
+    public void leerDNI(){
+        Scanner s = new Scanner (System.in);
+        System.out.print("DNI:");
+        setNif(s.nextLong());        
+    }
+    
+    @Override
+    public String toString() { // Metodo mostrar
+        String aux;
+        aux = getNif() + "-" + this.letraDni+"";
+        return aux;                
+    }
+    
+    
 }
