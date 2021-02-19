@@ -21,13 +21,13 @@ public class Curso {
     private TreeMap<Integer, Alumno> estudiantes;
     
     
-    public Curso(String nombreCurso){
+    public Curso(int numero, String nombreCurso){
         Faker f = new Faker();
         int numExpediente=0;
         
         this.nombreCurso = nombreCurso;
         for(int i=0; i<20;i++){
-            numExpediente = (int) (Math.random()*99999);
+            numExpediente = numero++;
             Nif dni = new Nif((long) (Math.random()*99999999));
             Alumno x = new Alumno((int)numExpediente, dni, f.name().firstName());
             this.estudiantes.put(numExpediente, x);  
