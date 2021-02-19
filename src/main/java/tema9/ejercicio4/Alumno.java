@@ -47,6 +47,12 @@ public class Alumno {
         this.nombrePadreYMadre[0] ="Padre";
         this.nombrePadreYMadre[1] ="Mama";
     }
+
+    public Alumno(int numeroExpediente, Nif dni, String nombreCompleto) {
+        this.numeroExpediente = numeroExpediente;
+        this.dni = dni;
+        this.nombreCompleto = nombreCompleto;
+    }
     
     public Alumno(int numeroExpediente, String nombreCompleto ){
         this.nombreCompleto = nombreCompleto;
@@ -115,5 +121,15 @@ public class Alumno {
         return this.nombrePadreYMadre[0];
     }
     
+    public String toString(){
+        String aux;
+        
+        aux = this.nombreCompleto + "\t"+this.dni+"\t"+this.numeroExpediente;
+        return aux;
+    }
+    
+    public boolean equals (Alumno x){
+        return this.numeroExpediente==x.numeroExpediente && this.dni == x.dni;
+    }    
     
 }
