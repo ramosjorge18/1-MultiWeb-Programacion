@@ -22,6 +22,7 @@ public class Curso {
     
     
     public Curso(int numero, String nombreCurso){
+        estudiantes = new TreeMap<>();
         Faker f = new Faker();
         int numExpediente=0;
         
@@ -30,7 +31,7 @@ public class Curso {
             numExpediente = numero++;
             Nif dni = new Nif((long) (Math.random()*99999999));
             Alumno x = new Alumno((int)numExpediente, dni, f.name().firstName());
-            this.estudiantes.put(numExpediente, x);  
+            estudiantes.put(numExpediente, x);
         }
     }
     
@@ -40,10 +41,10 @@ public class Curso {
         StringBuilder sb = new StringBuilder();
         
         Iterator <Integer> punt = alum.iterator();
-        
+        sb.append(nombreCurso+"\n");
         while (punt.hasNext()){
-            sb.append(this.estudiantes.get(punt.next().toString()));
-            sb.append("\t\t\n");  
+            sb.append(this.estudiantes.get(punt.next()).toString());
+            sb.append("\n");  
         }
         return sb.toString(); 
     }

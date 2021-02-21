@@ -52,6 +52,10 @@ public class Alumno {
         this.numeroExpediente = numeroExpediente;
         this.dni = dni;
         this.nombreCompleto = nombreCompleto;
+        this.cuentaCorriente = new CuentaCorriente(0.0);
+        this.nombrePadreYMadre = new String[2];
+        this.nombrePadreYMadre[0] ="Padre";
+        this.nombrePadreYMadre[1] ="Mama";
     }
     
     public Alumno(int numeroExpediente, String nombreCompleto ){
@@ -124,7 +128,7 @@ public class Alumno {
     public String toString(){
         String aux;
         
-        aux = this.nombreCompleto + "\t"+this.dni+"\t"+this.numeroExpediente;
+        aux = this.nombreCompleto + "\t"+this.dni.toString()+"\t"+this.numeroExpediente;
         return aux;
     }
     

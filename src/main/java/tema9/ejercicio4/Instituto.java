@@ -34,9 +34,38 @@ public class Instituto {
         } 
     }
     
-//    public String listadoGeneral(){
-//        StringBuilder sb = new StringBuilder();
-//        
-//    }
+    public String consultaAlumno(int numExpediente){
+        Alumno x = new Alumno();
+        Alumno y;
+        String a="";
+        for(int i=0; i<this.cursos.length;i++){
+            if(this.cursos[i]==null){
+                a= "Alumno no encontrado";
+            }else{
+                y = this.cursos[i].consulta(numExpediente);
+                if(!y.equals(x)){
+                    a = y.toString();
+                    return a;
+                }
+            }
+        }
+        return a;
+    }
+    
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        
+        for(int i=0;i<cursos.length;i++){
+            if (cursos [i]==null){
+                break;
+            }else{
+                sb.append(cursos[i].toString());
+                sb.append("\n");
+            }
+        }
+        return sb.toString();
+        
+    }
+    
     
 }
