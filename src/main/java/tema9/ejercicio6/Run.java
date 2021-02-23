@@ -17,12 +17,12 @@ public class Run {
         DecimalFormat f = new DecimalFormat("#.##");
         
         
-        oscar.setAsignatura(0, x);
-        oscar.setAsignatura(1, x2);
-        oscar.setAsignatura(2, x3);
+        oscar.setAsignatura1(x);
+        oscar.setAsignatura2(x2);
+        oscar.setAsignatura3(x3);
         
         david.ponerNota(oscar);
-        System.out.println("La meida de Oscar es:");
+        System.out.println("La meida de " + oscar.getNombre()+ " es:");
         System.out.println(f.format(david.setMedia(oscar)));
         
         

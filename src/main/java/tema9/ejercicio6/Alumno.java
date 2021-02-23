@@ -13,7 +13,7 @@ public class Alumno {
     public Alumno(int nExpediente, String nombre) {
         setnExpediente(nExpediente);
         setNombre(nombre);
-        asignaturas = new Asignatura[3];
+        asignaturas = new Asignatura[3]; // Maximo de asignatura por alumno 
     }
     
     public Alumno(int nExpediente){
@@ -40,13 +40,17 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public void setAsignaturas(Asignatura[] asignaturas) {
-        this.asignaturas = asignaturas; 
+    public void setAsignatura1 (Asignatura asignatura) {
+        this.asignaturas[0] = asignatura;
+    }
+    public void setAsignatura2 (Asignatura asignatura) {
+        this.asignaturas[1] = asignatura;
+    }
+    public void setAsignatura3 (Asignatura asignatura) {
+        this.asignaturas[2] = asignatura;
     }
     
-    public void setAsignatura(int nAsignatura, Asignatura asignatura){
-        asignaturas[nAsignatura]=asignatura;
-    }
+    
     
     
 }
