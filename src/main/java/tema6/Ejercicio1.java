@@ -2,9 +2,21 @@
 
 package tema6;
 
+import java.util.Collections;
+
 public class Ejercicio1 {
     public static void main(String[] args) {
         char prueba1='a', prueba2='9', prueba3='0';
+        String s = " Jorge ";
+        String [] si= s.split("o");
+        
+        for(int i = 0; i<si.length;i++){
+            System.out.println(si[i].toString());
+        }
+        
+        
+        
+        System.out.println(s.toUpperCase());
         
         System.out.println("Son digitos: "+prueba1+" o "+prueba2);
         System.out.println(Character.isDigit(prueba1));
@@ -28,7 +40,9 @@ public class Ejercicio1 {
             System.out.print(a+"es: "+prueba3+" ");
             prueba3++;
         }
+        System.out.println("");
         
+        si.toString();
     }
     
 }

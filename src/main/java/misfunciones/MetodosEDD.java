@@ -83,8 +83,6 @@ public class MetodosEDD {
             String clave = (String)it.next();
             total = total + tabla.get(clave);
         }
-        return total;
-        
-    }
-    
+        return total;       
+    }   
 }

@@ -1,11 +1,14 @@
 
 package misfunciones;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.Stack;
 
 public class MetodosArrays {
     static Scanner sc = new Scanner (System.in);
@@ -47,8 +50,7 @@ public class MetodosArrays {
                 for(int p=0; array[f][c]!=null && p<array[f][c].length;p++){
                     System.out.print(array[f][c]+" ");
                 }
-            }
-            
+            }  
         }   
     }
     
@@ -115,8 +117,8 @@ public class MetodosArrays {
      * Mostrar el contenido de una coleccion de Integer
      * @param numeros 
      */
-    public static void mostrarColeccion (Set<Integer> numeros){
-        Iterator<Integer> it = numeros.iterator();
+    public static void mostrarSet (Set numeros){
+        Iterator it = numeros.iterator();
         
         while(it.hasNext()){
             System.out.println(it.next());   
@@ -126,7 +128,7 @@ public class MetodosArrays {
      * Muestra el contenido de un ArrayList de Strings
      * @param palabras 
      */
-    public static void muestraArrayList(ArrayList<String> palabras) {
+    public static void muestraList(List palabras) {
         String palabra;
         
         for(int i=0;i<palabras.size();i++){
@@ -145,7 +147,17 @@ public class MetodosArrays {
         while (punt.hasNext()) {
             System.out.println(punt.next());
         }
-
     }
     
+    public static void mostrarArraydeQue(ArrayDeque cola){
+        while(cola.peek() != null){
+            System.out.println(cola.poll());
+        }
+    }
+    public static void mostrarStack(Stack pila){
+        while(pila.peek() != null){
+            System.out.println(pila.pop());
+        }
+    }
+  
 }

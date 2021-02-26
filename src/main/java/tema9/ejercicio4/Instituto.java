@@ -62,6 +62,7 @@ public class Instituto {
                 sb.append(cursos[i].toString());
                 sb.append("\n");
             }
+            sb.append("\t");
         }
         return sb.toString();
         
