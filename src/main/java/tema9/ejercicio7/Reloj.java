@@ -54,6 +54,8 @@ public class Reloj {
         return copia;   
     }
     
+    
+    
     public void leer(){
         Scanner sc = new Scanner (System.in);
         byte h, m, s;
@@ -102,10 +104,16 @@ public class Reloj {
     }
     
     public void anterior(int segundos){
-        int sHora, sResta=segundos, sTotales;
+        int sHora, sResta=segundos, sTotales, sFin=86399;
         
         sHora = aSegundos();
-        sTotales =sHora - sResta;
+        
+        if(sResta>sHora){
+            sTotales= sFin-(sResta-sHora);
+        }else{
+           sTotales =sHora - sResta; 
+        }
+        
         
         deSegundos(sTotales);
     }
@@ -160,13 +168,7 @@ public class Reloj {
         
         setHora(h);
         setMinutos(m);
-        setSegundos(s);
-        
-        
-        
-        
-        
-        
+        setSegundos(s);   
     }
     
     
