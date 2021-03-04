@@ -21,11 +21,12 @@ public class Run {
         primera.ingresar(200);
         System.out.println(primera.toString());
         System.out.println(primera);
-        System.out.println(primera.equals(segunda));
+        System.out.println("Son iguales la primera cuenta y las segunda :     "+primera.equals(segunda));
         primera.reintegro(100);
         System.out.println(primera);
-        
-        
+        primera.setInteres(2.5);
+        primera.calcularInteres();
+        System.out.println(primera);
     }
     
 }

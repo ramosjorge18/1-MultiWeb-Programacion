@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package tema9.ejercicio7;
 
 import java.util.Scanner;
@@ -11,6 +7,7 @@ import java.util.Scanner;
  *
  * @author pcbox
  */
+
 public class Reloj {
     private byte hora;
     private byte minutos;
@@ -23,7 +20,6 @@ public class Reloj {
     public Reloj() {
         this((byte) 0, (byte) 0, (byte) 0);
     }
-    
 
     public void setHora(byte hora) {
         valida(hora, minutos, segundos);
@@ -53,8 +49,6 @@ public class Reloj {
         Reloj copia = new Reloj(getHora(), getMinutos(), getSegundos());
         return copia;   
     }
-    
-    
     
     public void leer(){
         Scanner sc = new Scanner (System.in);
@@ -88,10 +82,7 @@ public class Reloj {
         mTotal = (byte) ((segundos-hTotal*3600)/60);
         sTotal = (byte) (segundos -(hTotal*3600+mTotal*60));
         
-        
-        setHora(hTotal);
-        setMinutos(mTotal);
-        setSegundos(sTotal);
+        valida(hTotal, mTotal, sTotal);
     }
     
     public void siguiente (int segundos){
@@ -171,8 +162,5 @@ public class Reloj {
         this.minutos = m;
         this.segundos = s;
     }
-    
-    
-    
-    
+
 }

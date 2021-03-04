@@ -35,7 +35,7 @@ public class CuentaAhorro extends CuentaCorriente{
     }
     
     public void calcularInteres(){
-        super.setSaldo(super.getSaldo()*interes);
+        super.setSaldo(super.getSaldo()*interes/100 + super.getSaldo());
     }
     
     
