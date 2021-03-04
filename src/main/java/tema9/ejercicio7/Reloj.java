@@ -68,8 +68,7 @@ public class Reloj {
         s = sc.nextByte();
         
         valida(h,m,s);
-        
-        
+   
     }
     
     public int aSegundos(){
