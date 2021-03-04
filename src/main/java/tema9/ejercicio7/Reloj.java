@@ -26,15 +26,15 @@ public class Reloj {
     
 
     public void setHora(byte hora) {
-        this.hora = hora;
+        valida(hora, minutos, segundos);
     }
 
     public void setMinutos(byte minutos) {
-        this.minutos = minutos;
+        valida(hora, minutos, segundos);
     }
 
     public void setSegundos(byte segundos) {
-        this.segundos = segundos;
+        valida(hora, minutos, segundos);
     }
 
     public byte getHora() {
@@ -84,9 +84,11 @@ public class Reloj {
     
     public void deSegundos(int segundos){
         byte sTotal, mTotal, hTotal;
-        sTotal = (byte) (segundos % 60);
-        mTotal = (byte) ((byte) (segundos / 60) % 60);
-        hTotal = (byte) ((byte) (segundos /3600) % 24);
+        
+        hTotal = (byte) (segundos /3600);
+        mTotal = (byte) ((segundos-hTotal*3600)/60);
+        sTotal = (byte) (segundos -(hTotal*3600+mTotal*60));
+        
         
         setHora(hTotal);
         setMinutos(mTotal);
@@ -166,9 +168,9 @@ public class Reloj {
         m = (byte) ((m+sm)%60);
         h = (byte) ((h+sh)%24);
         
-        setHora(h);
-        setMinutos(m);
-        setSegundos(s);   
+        this.hora = h;
+        this.minutos = m;
+        this.segundos = s;
     }
     
     
