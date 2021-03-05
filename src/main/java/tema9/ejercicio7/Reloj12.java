@@ -46,10 +46,19 @@ public class Reloj12 extends Reloj{
         this.segundos = super.getSegundos();
         if(super.getHora()>12){
             this.hora=(byte) (super.getHora()-12);
-            this.pm = true;
+            if(this.hora == 12){
+                this.pm= false;
+            }else{
+                this.pm = true;
+            }
         }else {
             this.hora=(byte) (super.getHora());
-            this.pm = false;
+            if(this.hora == 12){
+                this.pm= true;
+            }else{
+                this.pm = false;
+            }
+            
         }
     } 
 }

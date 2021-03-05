@@ -27,6 +27,7 @@ public class Run {
         System.out.println(a);
         a.setHora((byte) 28);
         System.out.println(a);
+        System.out.println("\n\nCon 12h");   
         Reloj12 c = new Reloj12((byte) 11, (byte) 59, (byte) 59);
         System.out.println(c);
         System.out.println(c.aSegundos());
