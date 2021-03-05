@@ -31,11 +31,13 @@ public class Reloj12 extends Reloj{
         } 
     }
     
+    @Override
     public void siguiente (int segundos){
         super.siguiente(segundos);
         valida(getHora(), getMinutos(), getSegundos());  
     }
     
+    @Override
     public void anterior(int segundos){
         super.anterior(segundos);
         valida(getHora(), getMinutos(), getSegundos());
@@ -46,18 +48,10 @@ public class Reloj12 extends Reloj{
         this.segundos = super.getSegundos();
         if(super.getHora()>12){
             this.hora=(byte) (super.getHora()-12);
-            if(this.hora == 12){
-                this.pm= false;
-            }else{
-                this.pm = true;
-            }
+            this.pm = this.hora != 12;
         }else {
             this.hora=(byte) (super.getHora());
-            if(this.hora == 12){
-                this.pm= true;
-            }else{
-                this.pm = false;
-            }
+            this.pm = this.hora == 12;
             
         }
     } 
