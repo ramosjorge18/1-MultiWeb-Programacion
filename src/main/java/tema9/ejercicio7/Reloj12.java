@@ -7,8 +7,7 @@ package tema9.ejercicio7;
  *
  * @author Vespertino
  */
-public class Reloj12 extends Reloj{
-    
+public class Reloj12 extends Reloj{    
     private boolean pm;
     private byte hora;
     private byte minutos;

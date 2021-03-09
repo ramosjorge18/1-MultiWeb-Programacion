@@ -38,6 +38,18 @@ public class MetodosArrays {
         }   
     }
     
+    //Metodo mostrar para las Matrices
+//    public String mostrar() {
+//        StringBuilder aux = new StringBuilder();
+//        for (int f = 0; f < matriz.length; f++) {
+//            for (int c = 0; c < matriz[f].length; c++) {
+//                aux.append(matriz[f][c] + " ");
+//            }
+//            aux.append("\n");
+//        }
+//        return aux.toString();
+//    }
+    
     /**
      * Muestra el contenido de los Arrays de 3D.
      * @param array 
@@ -53,6 +65,21 @@ public class MetodosArrays {
             }  
         }   
     }
+    
+    //Metodo mostrar para las clases cubos
+//    public String mostrar() {
+//        StringBuilder aux = new StringBuilder();
+//        for (int f = 0; f < cubo.length; f++) {
+//            for (int c = 0; c < cubo[f].length; c++) {
+//                for (int p = 0; p < cubo[f][c].length; p++) {
+//                    aux.append(cubo[f][c][p] + " ");
+//                }
+//                aux.append("\n");
+//            }
+//            aux.append("\n");
+//        }
+//
+//        return aux.toString();
     
     
     
@@ -80,6 +107,21 @@ public class MetodosArrays {
             }
         }  
     }
+    
+    /**
+     * Introducir contenido de los Arrays int de 3D
+     * @param array 
+     */
+    public static void introducirDatosArray(int [][][] array) {
+        for (int f=0; f<array.length;f++){
+            for(int c=0; array[f]!=null && c<array[f].length;c++){
+                for(int g=0;array[f][c]!=null && g<array[f][c].length;g++){
+                    array[f][c][g]= sc.nextInt();
+                }    
+            }
+        } 
+    }
+    
     
     // Comprobar si el contenido esta borrado.
     /**
