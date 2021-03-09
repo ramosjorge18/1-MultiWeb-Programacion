@@ -5,6 +5,8 @@
  */
 package ejercicios.poo1;
 
+import java.util.Objects;
+
 /**
  *
  * @author Vespertino
@@ -79,6 +81,28 @@ public class Item {
     @Override
     public String toString() {
         return "Nombre: "+nombre+"\tEditorial: "+editorial+"\tGenero: "+genero+"\tFecha Publicacion: "+añoPubli;
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Item other = (Item) obj;
+        if (this.añoPubli != other.añoPubli) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        return true;
     }
     
     

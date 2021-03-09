@@ -20,9 +20,9 @@ public class Usuario {
     
     //Constructor
     public Usuario(String nombreCompleto, Nif dni, int telefono) {
-        setNombreCompleto(nombreCompleto);
-        setDni(dni);
-        setTelefono(telefono);
+        this.nombreCompleto = nombreCompleto;
+        this.dni=dni;
+        this.telefono=telefono;
         this.pretamos = new Item[3];
         pretamos[0]= new Item();
         pretamos[1]=new Item();
@@ -31,39 +31,11 @@ public class Usuario {
     }
     
     //Setters
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
-    }
-
-    public void setDni(Nif dni) {
-        this.dni = dni;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
-    }
-
     public void setSancion(boolean sancion) {
         this.sancion = sancion;
     }
     
     //Getters
-    public String getNombreCompleto() {
-        return nombreCompleto;
-    }
-
-    public Nif getDni() {
-        return dni;
-    }
-
-    public int getTelefono() {
-        return telefono;
-    }
-
-    public Item[] getPretamos() {
-        return pretamos;
-    }
-
     public boolean isSancion() {
         return sancion;
     }

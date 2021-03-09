@@ -58,24 +58,27 @@ public class Biblioteca {
         Set k;
         k = listaItems.keySet();
         Iterator<Item> punt = k.iterator();
+        Item prueba;
         
         while(punt.hasNext()){
-            sb.append(listaItems.get(punt.next().toString()));
-            sb.append("\n");
+            prueba = listaItems.get(punt.next());
+            sb.append(prueba.toString());
+            sb.append("\n"); 
+            
         }
         return sb.toString();
     }
     
     public String listaRevistas(){
-        StringBuilder sb = new StringBuilder("");
+        StringBuilder sb = new StringBuilder("REVISTAS\n");
         Set k;
         k = listaItems.keySet();
-        Iterator punt = k.iterator();
+        Iterator<Item> punt = k.iterator();
         Item prueba;
         while(punt.hasNext()){
-            prueba = (Item) punt.next();
+            prueba = listaItems.get(punt.next());
             if(prueba instanceof Revista){
-               sb.append(listaItems.get(punt.next().toString()));
+               sb.append(prueba.toString());
                sb.append("\n"); 
             }
             
@@ -84,15 +87,15 @@ public class Biblioteca {
     }
     
     public String listaLibros(){
-        StringBuilder sb = new StringBuilder("");
+        StringBuilder sb = new StringBuilder("LIBROS\n");
         Set k;
         k = listaItems.keySet();
         Iterator<Item> punt = k.iterator();
         Item prueba;
         while(punt.hasNext()){
-            prueba = punt.next();
+            prueba = listaItems.get(punt.next());
             if(prueba instanceof Libros){
-               sb.append(listaItems.get(punt.next().toString()));
+               sb.append(prueba.toString());
                sb.append("\n"); 
             }
             
@@ -102,15 +105,17 @@ public class Biblioteca {
     
     public String listaGenero(String genero){
         StringBuilder sb = new StringBuilder("");
+        sb.append(genero);
+        sb.append("\n");
         Set k;
         k = listaItems.keySet();
         Iterator<Item> punt = k.iterator();
         Item prueba;
         
         while(punt.hasNext()){
-            prueba = punt.next();
+            prueba = listaItems.get(punt.next());
             if(prueba.getGenero().equals(genero)){
-                sb.append(listaItems.get(punt.next().toString()));
+                sb.append(prueba.toString());
                 sb.append("\n");
             }
         }
