@@ -7,7 +7,7 @@ package ejercicios.poo3;
 
 /**
  *
- * @author Vespertino
+ * @author Jorge Ramos
  */
 public class Cubo {
     private int lineas;
