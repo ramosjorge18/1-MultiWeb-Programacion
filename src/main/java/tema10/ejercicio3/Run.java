@@ -5,6 +5,8 @@
  */
 package tema10.ejercicio3;
 
+import tema10.ejercicio3.Enum.*;
+
 /**
  *
  * @author Vespertino
@@ -25,6 +27,7 @@ public class Run {
         System.out.println(x);
         
         x= ArtesMarciales.BOXEO;
+        System.out.println(x);
         
         switch (x) {
             case BOXEO:
