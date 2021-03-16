@@ -20,7 +20,7 @@ public class Velero extends Barco {
     @Override
     public double precioAlquiler(){
         double precio;
-        precio= super.getMetrosEslora()%10 + (numeroMastiles*5);
+        precio= (super.getMetrosEslora()%10*2) + (numeroMastiles*5);
         return precio;
     }
 

@@ -22,7 +22,7 @@ public class Yate extends Barco{
     @Override
     public double precioAlquiler(){
         double precio;
-        precio= super.getMetrosEslora()%10 + (cv*1) + (camarotes*20);
+        precio= (super.getMetrosEslora()%10*2) + (cv*1) + (camarotes*20);
         return precio;
     }
 }

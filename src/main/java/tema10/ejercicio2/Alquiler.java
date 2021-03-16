@@ -12,7 +12,6 @@ import java.util.GregorianCalendar;
  * @author Vespertino
  */
 public class Alquiler {
-    private int precioDia;
     private Persona cliente;
     private Barco barco;
     private short posicionAmarre;
@@ -25,7 +24,6 @@ public class Alquiler {
         this.posicionAmarre = posicionAmarre;
         this.fechaIni = fechaIni;
         this.fechaFin = fechaFin;
-        this.precioDia=2;
     }
     
     public double precioAlquiler(){
@@ -33,7 +31,7 @@ public class Alquiler {
         long dias;
         dias = fechaFin.getTimeInMillis()-fechaIni.getTimeInMillis();
         dias = dias/(1000*60*60*24);        
-        precio=dias*(barco.precioAlquiler()*precioDia); 
+        precio=dias*(barco.precioAlquiler()); 
         return precio;
     }
     
