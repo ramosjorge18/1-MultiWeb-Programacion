@@ -13,10 +13,9 @@ public class EmpleadoHoras extends Empleado{
     private double precioHora;
     private double horasMes;
 
-    public EmpleadoHoras(double precioHora, double horasMes, Nif nif, String nombre, byte edad) {
+    public EmpleadoHoras(double precioHora, Nif nif, String nombre, byte edad) {
         super(nif, nombre, edad);
         this.precioHora = precioHora;
-        this.horasMes = horasMes;
     }
 
     public void setHorasMes(double horasMes) {

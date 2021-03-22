@@ -10,7 +10,7 @@ package tema10.ejercicio4;
  * @author J.Ramos
  */
 public abstract class Empleado {
-    static final double sueldoInter = 950;
+    static final double sueldoInter = 950; //Deberia de ser SUELDOINTER
     private Nif nif;
     private String nombre;
     private byte edad;
