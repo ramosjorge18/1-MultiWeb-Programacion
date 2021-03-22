@@ -5,35 +5,45 @@
  */
 package tema11.ejercicio1;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author Vespertino
  */
 public class PilaLinked implements Pila{
+    
+    private LinkedList <Object> datos;
+    
 
     @Override
     public boolean crear() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        datos = new LinkedList<>();
+        return true;
     }
 
     @Override
     public boolean apilar(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        datos.addLast(o);
+        return true;
     }
 
     @Override
     public Object desapilar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object ret = datos.peekLast();
+        datos.pollLast();
+        return ret;
     }
 
     @Override
     public Object cima() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object ret = datos.peekLast();
+        return ret;
     }
 
     @Override
     public boolean vacia() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return datos.isEmpty();
     }
     
 }
