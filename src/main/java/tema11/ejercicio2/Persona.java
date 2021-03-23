@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package misobjetos;
+package tema11.ejercicio2;
 
-import tema11.ejercicio2.*;
 import misobjetos.*;
 import tema10.ejercicio4.Nif;
 
