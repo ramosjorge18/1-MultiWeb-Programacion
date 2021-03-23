@@ -23,6 +23,21 @@ public class Test {
         System.out.println(a.vacia());
         a.borra();
         System.out.println(a.vacia());
+        System.out.println("");
+        PilaLinked b = new PilaLinked();
+        b.crear();
+        System.out.println(b.vacia());
+        b.desapilar();
+        b.apilar(12);
+        b.apilar(5);
+        b.apilar(45);
+        b.apilar(81);
+        System.out.println(b.cima());
+        System.out.println(b.desapilar());
+        System.out.println(b.cima());
+        
+        
+        
     }
     
 }
