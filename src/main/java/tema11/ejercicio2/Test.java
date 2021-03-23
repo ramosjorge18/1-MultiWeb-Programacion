@@ -5,6 +5,8 @@
  */
 package tema11.ejercicio2;
 
+import com.github.javafaker.Faker;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.TreeSet;
 import tema10.ejercicio4.Nif;
@@ -15,22 +17,21 @@ import tema10.ejercicio4.Nif;
  */
 public class Test {
     public static void main(String[] args) {
-        Nif a1 = new Nif(11111);
-        Nif b1 = new Nif(22222);
-        Nif b2 = new Nif(33333);
-        Persona a = new Persona(a1, "Jorge");
-        Persona b = new Persona(b1, "Pepe");
-        Persona c = new Persona(b2, "Lolo");
-        TreeSet<Persona> d = new TreeSet();
-        d.add(a);
-        d.add(b);
-        d.add(c);
-        
-        Iterator it;
-        it = d.iterator();
-        while(it.hasNext()){
-            System.out.println(it.next());
+        Cliente[] lista = new Cliente[10];
+        for(int i=0; i<10;i++){
+            Nif a = new Nif(Faker.instance().number().randomNumber());
+            Cliente b = new Cliente(Faker.instance().beer().name(), Faker.instance().artist().name(), a);
+            lista[i]=b;
         }
+        for(int i=0; i<10;i++){
+            System.out.println(lista[i]);
+        }
+        System.out.println("\n\nOrdenadors\n\n");
+        Arrays.sort(lista);
+        for(int i=0; i<10;i++){
+            System.out.println(lista[i]);
+        }
+        
         
     }
     
