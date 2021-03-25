@@ -6,7 +6,9 @@
 package tema11.ejercicio2;
 
 import com.github.javafaker.Faker;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.TreeSet;
 import tema10.ejercicio4.Nif;
@@ -54,6 +56,25 @@ public class Test {
             System.out.println(lista[i]);
         }
         
+        ArrayList<Cliente> ppp = new ArrayList();
+        for(int i=0; i<50;i++){
+            sueldo = (float) (Math.random()*100000);
+            años = (byte) (Math.random()*130);
+            numero = (long) (Math.random()*10000000);
+            nombre = Faker.instance().beer().name();
+            apellido = Faker.instance().artist().name();
+            Nif a = new Nif(numero);
+            Cliente cli = new Cliente(nombre, apellido, a,años ,sueldo) ;
+            ppp.add(cli);
+        }
+        
+        System.out.println("");
+        Collections.sort(ppp, comp);
+        
+        for (Cliente cliente : ppp) {
+            System.out.println(cliente);
+            
+        }
         
     }
     
