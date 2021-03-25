@@ -17,17 +17,39 @@ import tema10.ejercicio4.Nif;
  */
 public class Test {
     public static void main(String[] args) {
+        ComparaEdad comp = new ComparaEdad();
+        ComparaSueldo aaaa = new ComparaSueldo();
         Cliente[] lista = new Cliente[10];
+        String nombre;
+        String apellido;
+        long numero;
+        byte años;
+        float sueldo;
         for(int i=0; i<10;i++){
-            Nif a = new Nif(Faker.instance().number().randomNumber());
-            Cliente b = new Cliente(Faker.instance().beer().name(), Faker.instance().artist().name(), a);
-            lista[i]=b;
+            sueldo = (float) (Math.random()*100000);
+            años = (byte) (Math.random()*130);
+            numero = (long) (Math.random()*10000000);
+            nombre = Faker.instance().beer().name();
+            apellido = Faker.instance().artist().name();
+            Nif a = new Nif(numero);
+            Cliente cli = new Cliente(nombre, apellido, a,años ,sueldo) ;
+            lista[i]=cli;
         }
         for(int i=0; i<10;i++){
             System.out.println(lista[i]);
         }
-        System.out.println("\n\nOrdenadors\n\n");
+        System.out.println("\n\nOrdenados\n\n");
         Arrays.sort(lista);
+        for(int i=0; i<10;i++){
+            System.out.println(lista[i]);
+        }
+        System.out.println("");
+        Arrays.sort(lista,comp);
+        for(int i=0; i<10;i++){
+            System.out.println(lista[i]);
+        }
+        System.out.println("");
+        Arrays.sort(lista,aaaa);
         for(int i=0; i<10;i++){
             System.out.println(lista[i]);
         }

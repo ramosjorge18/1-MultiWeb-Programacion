@@ -5,6 +5,7 @@
  */
 package tema11.ejercicio2;
 
+import java.util.Comparator;
 import tema10.ejercicio4.Nif;
 
 /**
@@ -19,12 +20,12 @@ public class Cliente implements Comparable<Object>{
     private byte edad;
     private float saldo;
 
-    public Cliente(String nombre, String apellido1, Nif dni) {
+    public Cliente(String nombre, String apellido1, Nif dni, byte edad, float saldo) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.dni = dni;
-        this.edad = 0;
-        this.saldo=0;
+        this.edad = edad;
+        this.saldo=saldo;
         this.apellido2 ="";
     }
 
@@ -32,9 +33,18 @@ public class Cliente implements Comparable<Object>{
         return dni;
     }
 
+    public byte getEdad() {
+        return edad;
+    }
+
+    public float getSaldo() {
+        return saldo;
+    }
+    
+
     @Override
     public String toString() {
-        return "Nombre Completo= " + nombre +" " + apellido1 + "\t" + dni;
+        return "Nombre Completo= " + nombre +" " + apellido1 + "\t" + dni + "\t edad: "+getEdad()+ " Saldo: "+getSaldo();
     }
     
     @Override
@@ -42,6 +52,7 @@ public class Cliente implements Comparable<Object>{
         Cliente aux = (Cliente) arg0;
         return (int) (this.getDni().getNif()-aux.getDni().getNif());
     }
+
     
     
 }
