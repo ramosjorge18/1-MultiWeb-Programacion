@@ -5,6 +5,8 @@
  */
 package tema11.ejercicio2;
 
+import com.github.javafaker.Faker;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.TreeSet;
 import tema10.ejercicio4.Nif;
@@ -15,22 +17,43 @@ import tema10.ejercicio4.Nif;
  */
 public class Test {
     public static void main(String[] args) {
-        Nif a1 = new Nif(11111);
-        Nif b1 = new Nif(22222);
-        Nif b2 = new Nif(33333);
-        Persona a = new Persona(a1, "Jorge");
-        Persona b = new Persona(b1, "Pepe");
-        Persona c = new Persona(b2, "Lolo");
-        TreeSet<Persona> d = new TreeSet();
-        d.add(a);
-        d.add(b);
-        d.add(c);
-        
-        Iterator it;
-        it = d.iterator();
-        while(it.hasNext()){
-            System.out.println(it.next());
+        ComparaEdad comp = new ComparaEdad();
+        ComparaSueldo aaaa = new ComparaSueldo();
+        Cliente[] lista = new Cliente[10];
+        String nombre;
+        String apellido;
+        long numero;
+        byte años;
+        float sueldo;
+        for(int i=0; i<10;i++){
+            sueldo = (float) (Math.random()*100000);
+            años = (byte) (Math.random()*130);
+            numero = (long) (Math.random()*10000000);
+            nombre = Faker.instance().beer().name();
+            apellido = Faker.instance().artist().name();
+            Nif a = new Nif(numero);
+            Cliente cli = new Cliente(nombre, apellido, a,años ,sueldo) ;
+            lista[i]=cli;
         }
+        for(int i=0; i<10;i++){
+            System.out.println(lista[i]);
+        }
+        System.out.println("\n\nOrdenados\n\n");
+        Arrays.sort(lista);
+        for(int i=0; i<10;i++){
+            System.out.println(lista[i]);
+        }
+        System.out.println("");
+        Arrays.sort(lista,comp);
+        for(int i=0; i<10;i++){
+            System.out.println(lista[i]);
+        }
+        System.out.println("");
+        Arrays.sort(lista,aaaa);
+        for(int i=0; i<10;i++){
+            System.out.println(lista[i]);
+        }
+        
         
     }
     
