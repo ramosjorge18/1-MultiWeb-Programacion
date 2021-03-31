@@ -22,11 +22,7 @@ public class Controlador {
     public void altaCliente(){
         // Creamos el Nif y el Cliente sacando los datos de la vista
         Nif a = new Nif(vista.getDni().getNif());
-        cliente = new Cliente(vista.getNombre(), vista.getApellido1(), a, (byte)vista.getEdad(), (float) vista.getSaldo());
         cliente = new Cliente(vista.getNombre(), vista.getApellido1(),vista.getApellido2(), a, (byte)vista.getEdad(), (float) vista.getSaldo(), vista.getCasado(), vista.getFumador(), vista.getComunidadAutonoma(), vista.getSexo());
-        
-        vista.getApellido2();
-        vista.getDni();
         //Comprobamos la confirmación
         
         //Si es true añadimos a la bbdd
