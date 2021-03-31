@@ -17,6 +17,7 @@ public class Run {
 
     private static void runSwing() {
         Ventana vistaSwing = new Ventana();
+        //VentanaConsola vista = new VentanaConsola();
         Modelo modelo = new Modelo();
         Controlador c = new Controlador(vistaSwing, modelo);
         

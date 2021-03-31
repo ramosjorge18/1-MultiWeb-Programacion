@@ -12,20 +12,25 @@ package swing.trabajo;
 public class Controlador {
     private IVista vista;
     private IModelo modelo;
+    private Cliente cliente;
 
     public Controlador(IVista vista, IModelo modelo) {
         this.vista = vista;
-        this.modelo = modelo;
+        this.modelo = modelo;  
     }
     
     public void altaCliente(){
-        //Llamamos al modelo para guardar los datos del cliente
-        vista.getNombre();
-        vista.getApellido1();
+        // Creamos el Nif y el Cliente sacando los datos de la vista
+        Nif a = new Nif(vista.getDni().getNif());
+        cliente = new Cliente(vista.getNombre(), vista.getApellido1(), a, (byte)vista.getEdad(), (float) vista.getSaldo());
+        
         vista.getApellido2();
-        vista.getEdad();
         vista.getDni();
-        vista.getSaldo();
+        //Comprobamos la confirmación
+        
+        //Si es true añadimos a la bbdd
+        
+        //Sino vaciamos
         //Vaciamos los recuadros 
         vista.setNombre("");
         vista.setApellido1("");

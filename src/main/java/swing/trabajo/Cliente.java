@@ -5,9 +5,7 @@
  */
 package swing.trabajo;
 
-import tema11.ejercicio2.*;
 import java.util.Comparator;
-import tema10.ejercicio4.Nif;
 
 /**
  *

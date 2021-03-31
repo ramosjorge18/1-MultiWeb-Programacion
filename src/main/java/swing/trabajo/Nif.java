@@ -1,8 +1,5 @@
 package swing.trabajo;
 
-import tema10.ejercicio4.*;
-import tema10.ejercicio2.*;
-import tema9.ejercicio2.*;
 import java.util.*;
 
 /**
