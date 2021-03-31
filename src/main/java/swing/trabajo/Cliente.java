@@ -18,15 +18,32 @@ public class Cliente implements Comparable<Object>{
     private Nif dni;
     private byte edad;
     private float saldo;
+    private boolean casado;
+    private boolean fumador;
+    private String comunidadAutonoma;
+    private String sexo;
 
     public Cliente(String nombre, String apellido1, Nif dni, byte edad, float saldo) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.dni = dni;
-        this.edad = edad;
         this.saldo=saldo;
+        this.edad = edad;
         this.apellido2 ="";
     }
+
+    public Cliente(String nombre, String apellido1, String apellido2, Nif dni, byte edad, float saldo, boolean casado, boolean fumador, String comunidadAutonoma, String sexo) {
+        this.nombre = nombre;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+        this.dni = dni;
+        this.edad = edad;
+        this.saldo = saldo;
+        this.casado = casado;
+        this.fumador = fumador;
+        this.comunidadAutonoma = comunidadAutonoma;
+        this.sexo = sexo;
+    }    
 
     public Nif getDni() {
         return dni;
