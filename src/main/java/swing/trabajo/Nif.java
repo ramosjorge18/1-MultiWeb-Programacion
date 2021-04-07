@@ -50,6 +50,27 @@ public class Nif {
         aux = getNif() + "-" + this.letraDni+"";
         return aux;                
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Nif other = (Nif) obj;
+        if (this.dni != other.dni) {
+            return false;
+        }
+        if (this.letraDni != other.letraDni) {
+            return false;
+        }
+        return true;
+    }
     
     
 }

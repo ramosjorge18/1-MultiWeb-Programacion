@@ -23,12 +23,6 @@ public interface IVista {
     public abstract double getSaldo();
     public abstract void setSaldo(double saldo);
     
-    public abstract String getDireccion();
-    public abstract void setDireccion(String direccion);
-    
-    public abstract void setControlador(/*Controlador c*/);
-    public abstract void mostrar(); // Dice que se visualice la IGU (interfaz grafica Usuario)
-    
     public abstract boolean getCasado();
     public abstract void setCasado(boolean casado);
     
@@ -39,7 +33,18 @@ public interface IVista {
     public abstract void setComunidadAutonoma(String comunidad);
     
     public abstract String getSexo();
-    public abstract void setSexo (String comunidad);
+    public abstract void setSexo (String sexo);
+    
+    public abstract short getCodigo();
+    public abstract void setCodigo(short codigo);
+    
+    public abstract boolean getConfirmacion();
+    public abstract void setConfirmacion(boolean confirmacion);
+    
+    public abstract void setControlador(Controlador c);
+    public abstract void mostrar(); // Dice que se visualice la IGU (interfaz grafica Usuario)
+    
+    
     
     
     
