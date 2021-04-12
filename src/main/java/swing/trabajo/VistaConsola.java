@@ -216,6 +216,34 @@ public class VistaConsola implements IVista {
                     }
                     controlador.altaCliente();
                     break;
+                case 2:
+                    System.out.println("Introduce el DNI");
+                    dni = new Nif(sc.nextLong());
+                    controlador.muestraCliente();
+                    System.out.println(codigo);
+                    System.out.println(nombre);
+                    System.out.println(apellido1);
+                    System.out.println(apellido2);
+                    System.out.println(dni);
+                    System.out.println(edad);
+                    System.out.println(saldo);
+                    System.out.println(casado);
+                    System.out.println(fumador);
+                    System.out.println(comunidadAutonoma);
+                    System.out.println(sexo);
+                    System.out.println("");
+                    System.out.print("¿Desea eliminar este Cliente?(Y/N): ");
+                    letra=sc.next();
+                    if(letra.charAt(0)=='y'|| letra.charAt(0)=='Y'){
+                        confirmar=true;
+                        controlador.bajaCliente();
+                        System.out.println("Cliente Borrado");
+                    }else{
+                        confirmar=false;
+                        System.out.println("No se borro el Cliente:");
+                    }
+                    break;
+                    
                 case 3:
                     System.out.print("Introduce Codigo: ");
                     codigo = sc.nextShort();

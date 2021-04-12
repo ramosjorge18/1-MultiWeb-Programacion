@@ -17,24 +17,34 @@ public class ModeloArray implements IModelo {
 
     private Cliente[] listaClientes = new Cliente[100];
     private byte cont = 0;
-    private byte num;
+
+    public ModeloArray() {
+        for (int i = 0; i < listaClientes.length; i++) {
+            listaClientes[i] = new Cliente();
+
+        }
+    }
 
     @Override
     public boolean añadeCliente(Cliente a) {
         if (listaClientes.equals(a)) {
-                return false;
-            } else {
-                listaClientes[cont] = a;
-                cont++;
-                return true;
+            return false;
+        } else {
+            for (int i = 0; i < listaClientes.length; i++) {
+                if (listaClientes[i].equals(new Cliente())) {
+                    listaClientes[i] = a;
+                    return true;
+                }
             }
+
+        }return false;
     }
 
     @Override
     public boolean borraCliente(Cliente a) {
         for (int i = 0; i < cont; i++) {
-            if(listaClientes[i].equals(a)){
-                listaClientes[i]=null;
+            if (listaClientes[i].equals(a)) {
+                listaClientes[i] = new Cliente();
                 cont--;
                 return true;
             }
@@ -51,18 +61,18 @@ public class ModeloArray implements IModelo {
 
     @Override
     public Cliente muestraCliente(Nif a) {
-        for(int i=0; i<cont ; i++){
-            if(listaClientes[i].getDni().equals(a)){
+        for (int i = 0; i < cont; i++) {
+            if (listaClientes[i].getDni().equals(a)) {
                 return listaClientes[i];
             }
         }
-        return null;
+        return new Cliente();
     }
-    
+
     @Override
     public Cliente muestraClienteCod(short cod) {
-        for(int i=0; i<cont ; i++){
-            if(listaClientes[i].getCodigo()==cod){
+        for (int i = 0; i < cont; i++) {
+            if (listaClientes[i].getCodigo() == cod) {
                 return listaClientes[i];
             }
         }
@@ -85,7 +95,4 @@ public class ModeloArray implements IModelo {
         return cont;
     }
 
-    
-    
-    
 }

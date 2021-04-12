@@ -39,7 +39,7 @@ public class Controlador {
     }
 
     public void bajaCliente() {
-        //Comprobamos que desea eliminar cliente
+        
         //Si es verdadero borraremos el cliente
         if (modelo.valida(vista.getConfirmacion())) {
             modelo.borraCliente(cliente);

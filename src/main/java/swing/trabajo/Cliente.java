@@ -25,6 +25,12 @@ public class Cliente implements Comparable<Object>{
     private String comunidadAutonoma;
     private String sexo;
 
+    public Cliente() {
+        this("NS", "NS", "NS", new Nif(0), (byte)0, 0F, false, false, "NS", "NS", (short)0);
+    }
+    
+    
+
     public Cliente(String nombre, String apellido1, Nif dni, byte edad, float saldo) {
         this.nombre = nombre;
         this.apellido1 = apellido1;
@@ -121,9 +127,4 @@ public class Cliente implements Comparable<Object>{
         }
         return true;
     }
-    
-    
-
-    
-    
 }
