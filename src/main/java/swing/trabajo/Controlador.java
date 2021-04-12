@@ -90,7 +90,8 @@ public class Controlador {
     }
     
     public void modificaCliente(){
-        
+        muestraCliente();
+        altaCliente();
     }
 
 }

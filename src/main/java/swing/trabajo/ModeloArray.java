@@ -33,6 +33,7 @@ public class ModeloArray implements IModelo {
             for (int i = 0; i < listaClientes.length; i++) {
                 if (listaClientes[i].equals(new Cliente())) {
                     listaClientes[i] = a;
+                    cont++;
                     return true;
                 }
             }
@@ -62,7 +63,7 @@ public class ModeloArray implements IModelo {
     @Override
     public Cliente muestraCliente(Nif a) {
         for (int i = 0; i < cont; i++) {
-            if (listaClientes[i].getDni().equals(a)) {
+            if (listaClientes[i].getDni().getNif()==a.getNif()) {
                 return listaClientes[i];
             }
         }
